@@ -7,7 +7,7 @@ and configure istio to include grafana in the monitoring namespace.
 
 ```hcl
 module "prometheus-operator" {
-  source                            = "github.com/evry-ace/tf_helm_prometheus"
+  source                            = "github.com/evry-ace/tf-helm-prometheus"
   prometheus_operator_chart_version = "${var.prometheus_operator_chart_version}"
   prometheus_operator_app_version   = "${var.prometheus_operator_app_version}"
   prometheus_external_url           = "http://prometheus.${azurerm_dns_zone.ace-dns-env-zone.name}"
@@ -15,7 +15,7 @@ module "prometheus-operator" {
 }
 
 module "grafana" {
-  source = "github.com/evry-ace/tf_helm_prometheus"
+  source = "github.com/evry-ace/tf-helm-prometheus"
 }
 ```
 
